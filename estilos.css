@@ -1,0 +1,370 @@
+:root {
+  --color: #252A2E;
+  --fondo: #E7E7E7;
+  --titulos: 40px;
+  --margenes: 40px;
+  --espacios: 14px;
+  --espacios-contenido: 45px;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--fondo);
+}
+
+img {
+  vertical-align: top;
+}
+
+/* PRELOADER */
+.hidden {
+  overflow: hidden;
+}
+
+.centrado {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/* HEADER */
+
+header {
+  width: 100%;
+  height: 600px;
+  background: url(img/FONDO.png);
+  background-attachment: initial;
+  background-position: center;
+  background-size: cover;
+  background-position-y: 2.3vw;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+  background: var(--fondo);
+  height: 80px;
+  color: var(--color);
+}
+
+
+.contenedor-nav {
+  display: flex;
+  margin: auto;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 80%;
+  height: inherit;
+  overflow: hidden;
+}
+
+nav .enlaces a {
+  display: inline-block;
+  padding: 5px 0;
+  margin-right: 100px;
+  font-size: 27px;
+  font-weight: 300;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  color: inherit;
+}
+
+nav .enlaces a:hover {
+  border-bottom: 3px solid var(--color);
+  transition: 0.5s;
+}
+
+.logo, .logo img {
+  height: 60px;
+}
+
+.icono {
+  display: none;
+  font-size: 24px;
+  padding: 23.5px 20px;
+}
+
+/* MAIN */
+
+.contenedor {
+  margin: auto;
+  padding: var(--margenes);
+  max-width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.contenedor h3 {
+  font-size: var(--titulos);
+  color: var(--color1);
+  margin-bottom: var(--espacios);
+}
+
+.contenedor p {
+  font-weight: 300;
+  color: var(--color);
+}
+
+.after::after {
+  content: '';
+  display: block;
+  margin: auto;
+  margin-top: var(--espacios);
+  width: 100px;
+  height: 2px;
+  background: var(--color);
+  margin-bottom: var(--espacios-contenido);
+}
+
+.about {
+  background: url(img/teclado.jpg);
+  height: auto;
+}
+
+.servicios {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.foto-servicio {
+  width: 68%;
+}
+
+.caja-servicios {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.caja-servicios>h4 {
+  margin-bottom: var(--espacios);
+}
+
+.caja-servicios>p {
+  text-align: justify;
+}
+
+.bordes {
+  padding-bottom: 40px;
+}
+
+.formulario {
+  display: flex;
+  float: left;
+  padding: 25px;
+  margin: var(--espacios-contenido);
+}
+
+.campos {
+  text-align: justify;
+  width: 98.2%;
+  margin-left: 500px;
+  float: left;
+}
+
+.formu {
+  padding-bottom: 20px;
+  font-size: 20px;
+
+}
+
+.genero {
+  padding-bottom: 20px;
+  font-size: 20px;
+}
+
+.btn {
+  margin-left: 4vw;
+}
+
+.mapa {
+  margin-top: 4.5%;
+  margin-right: 8%;
+}
+
+/* FOOTER */
+
+.iconos {
+  display: flex;
+  margin: auto;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.fab {
+  font-size: 60px;
+  color: var(--color);
+  margin-bottom: var(--espacios);
+  display: inline-block;
+}
+
+.footer-contenedor {
+  margin: auto;
+  padding: var(--margenes) 0;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  overflow: hidden;
+}
+
+footer p {
+  margin-top: var(--espacios);
+}
+
+@media screen and (max-width: 700px) {
+
+
+  .icono {
+    display: block;
+    cursor: pointer;
+  }
+
+  .enlaces {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    height: 100%;
+    transition: 0.5s;
+    width: 0;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    background: rgb(231, 231, 231, );
+
+  }
+
+  .enlaces a {
+    display: block;
+    width: 100%;
+    height: 60px;
+    margin-top: 20%;
+    text-align: center;
+    color: #fff;
+
+  }
+
+  :root {
+    --margenes: 30px;
+  }
+
+  .campos {
+    text-align: justify;
+    width: 98.2%;
+    margin-left: 500px;
+    float: left;
+  }
+
+  .formulario {
+    display: flex;
+    float: right;
+    padding: 1%;
+    margin-right: 14%;
+
+  }
+
+  .formu {
+    padding-bottom: 20px;
+    font-size: 19.9px;
+  }
+
+  .btn {
+    margin-left: 15vw;
+  }
+
+  iframe {
+    max-width: 109.5%;
+    height: 280px;
+  }
+
+  .contenedor h3 {
+    padding-top: 80px;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --espacios-contenido: 25px;
+  }
+
+  .caja-servicios {
+    width: 90%;
+    margin-bottom: var(--margenes);
+  }
+
+  .iconos {
+    margin: auto;
+  }
+
+  .formu {
+    padding-bottom: 20px;
+    font-size: 19.5px;
+  }
+
+  .formulario {
+    display: flex;
+    float: right;
+    padding: 3%;
+    margin-right: -0.5%;
+
+  }
+
+  .btn {
+    margin-left: 22vw;
+  }
+
+}
